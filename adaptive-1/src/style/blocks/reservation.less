@@ -1,0 +1,254 @@
+.reservation {
+  padding: 50px 0 85px;
+
+  background-color: #f8f5f2;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 65px;
+  }
+}
+
+.record {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__input {
+    box-sizing: border-box;
+    .size(295px, 70px);
+    margin-bottom: 35px;
+    padding: 25px 50px 25px 25px;
+
+    font-weight: 700;
+
+    background-color: #ffffff;
+    border: 1px solid #e5ddd5;
+
+    &:hover {
+      border: 1px solid #d5c9bd;
+    }
+
+    &:focus {
+      border: 1px solid #999999;
+    }
+
+    &--contact {
+      width: 462px;
+    }
+
+    &--dopinfo {
+      .size(100%, 211px);
+      margin-bottom: 70px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+
+    .font(30px, 30px);
+    text-transform: uppercase;
+    text-align: center;
+
+    &::before,
+    &::after {
+      content: "";
+      flex-grow: 1;
+      .size(30px, 1px);
+
+      background-color: #e5ddd5;
+    }
+
+    &::before {
+      margin-right: 40px;
+    }
+
+    &::after {
+      margin-left: 40px;
+    }
+  }
+
+  &__beards {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 55px;
+
+    text-align: center;
+  }
+
+  &__beard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-input {
+      display: none;
+    }
+
+    &-input:checked + span::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      box-sizing: border-box;
+      .size(17px, 17px);
+
+      border: 1px solid #e5ddd5;
+      border-radius: 50%;
+    }
+
+    &-name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+
+      cursor: pointer;
+
+      &--indicator {
+        position: relative;
+
+        box-sizing: border-box;
+        .size(50px, 50px);
+        margin-bottom: 20px;
+
+        border: 1px solid #e5ddd5;
+        border-radius: 50%;
+      }
+
+      &:hover span,
+      &:focus span {
+        border: 1px solid #d5c9bd;
+      }
+
+      &:active span {
+        border: 18px solid #d5c9bd;
+      }
+    }
+  }
+
+  &__dops {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 35px;
+
+    &-item {
+      display: flex;
+      width: 33.33333%;
+      margin-bottom: 45px;
+    }
+  }
+}
+
+// TABLET
+@media (max-width: @tablet-width) {
+  .reservation {
+    &__header {
+      margin-bottom: 50px;
+    }
+  }
+
+  .record {
+    position: relative;
+
+    justify-content: flex-start;
+
+    &__input {
+      width: 213px;
+      margin-bottom: 30px;
+      padding: 15px;
+
+      &--contact,
+      &--dopinfo {
+        width: 100%;
+      }
+
+      &--dopinfo {
+        margin-bottom: 55px;
+      }
+    }
+
+    &__dops-item {
+      width: 50%;
+    }
+  }
+}
+
+// MOBILE
+@media (max-width: @mobile-width) {
+  .reservation {
+    padding: 30px 20px 40px;
+
+    &__header {
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .btn--link {
+      display: none;
+    }
+  }
+
+  .record {
+    &__input {
+      .size(100%, 50px);
+      margin-bottom: 5px;
+
+      .font(18px, 30px);
+      font-weight: 400;
+
+      &--patron,
+      &--email {
+        margin-bottom: 30px;
+      }
+
+      &--dopinfo {
+        height: 112px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &__title {
+      display: block;
+      margin-bottom: 35px;
+
+      .font(20px, 27px);
+
+      &::before {
+        content: "";
+      }
+    }
+
+    &__beards {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-bottom: 15px;
+    }
+
+    &__beard {
+      width: 33.33333%;
+      margin-bottom: 30px;
+
+      &-name {
+        margin-bottom: 15px;
+
+        &--indicator {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    &__dops-item {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}

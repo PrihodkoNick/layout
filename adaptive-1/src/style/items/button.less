@@ -1,0 +1,106 @@
+.btn {
+  .size(160px, 50px);
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: @font-bold;
+  text-transform: uppercase;
+  color: #000000;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:active * {
+    opacity: 0.3;
+  }
+
+  // light
+  &--light {
+    border: 1px solid #e5ddd5;
+
+    &:hover,
+    &:focus {
+      border: 1px solid #d5c9bd;
+    }
+
+    &:active {
+      background-color: #d5c9bd;
+    }
+  }
+
+  // brown
+  &--brown {
+    .size(100%, 50px);
+
+    color: #ffffff;
+
+    background-color: @brown-color;
+
+    &:hover,
+    &:focus {
+      background-color: #6a4d38;
+    }
+
+    &:disabled {
+      background-color: #aeaeae;
+    }
+  }
+
+  // gray
+  &--gray {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 0;
+
+    text-align: center;
+    color: #ffffff;
+
+    border: 1px solid #3f3f3f;
+
+    &:hover,
+    &:focus {
+      border: 1px solid #d5c9bd;
+    }
+
+    &:active {
+      border: none;
+      background-color: #252525;
+    }
+  }
+
+  // social
+  &--social {
+    position: relative;
+
+    display: block;
+    .size(50px, 50px);
+
+    &:active img {
+      opacity: 0.3;
+    }
+  }
+
+  // slider
+  &--slider {
+    position: relative;
+
+    .size(5%, 160px);
+  }
+
+  // link
+  &--link {
+    text-align: center;
+    line-height: 50px;
+  }
+
+  // phone
+  &--phone {
+    width: 280px;
+    margin: 0 auto;
+
+    text-transform: none;
+  }
+}

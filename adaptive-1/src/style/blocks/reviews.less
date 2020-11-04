@@ -1,0 +1,179 @@
+.reviews {
+  padding: 55px 0 40px;
+
+  background-color: @bg-lightgrey;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    padding-left: 70px;
+  }
+
+  &__slider {
+    display: flex;
+    margin-bottom: 40px;
+    overflow: hidden;
+
+    width: 100%;
+  }
+
+  &__toggles {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+  }
+
+  &__toggle {
+    transform: rotate(45deg);
+
+    box-sizing: border-box;
+    .size(7px, 7px);
+    margin-right: 25px;
+
+    border: 1px solid @bg-darkgrey;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {
+      background-color: @bg-darkgrey;
+    }
+  }
+}
+
+.slider {
+  &__list {
+    display: flex;
+    width: 90%;
+    margin: 0 20px;
+    overflow: hidden;
+  }
+
+  &__item {
+    display: flex;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+  }
+
+  &__quote {
+    flex-grow: 1;
+    padding: 35px 20px 30px 65px;
+
+    border: 1px solid #e5ddd5;
+  }
+
+  &__author-name {
+    display: block;
+    margin-bottom: 18px;
+
+    font-family: @font-bold;
+    .font(24px, 27px);
+  }
+}
+
+// TABLET
+@media (max-width: @tablet-width) {
+  .reviews {
+    padding: 40px 0;
+
+    &__title {
+      padding-left: 0;
+    }
+
+    &__slider {
+      margin-bottom: 0;
+    }
+
+    &__toggles {
+      top: -4px;
+      z-index: 1;
+
+      padding: 0 15px;
+
+      background-color: #f8f5f2;
+    }
+  }
+
+  .slider {
+    &__list {
+      margin: 0;
+      border-top: 1px solid #e5ddd5;
+      border-bottom: 1px solid #e5ddd5;
+    }
+
+    &__item {
+      align-items: center;
+      margin: 0;
+      padding: 32px 30px;
+    }
+
+    &__author-photo {
+      .size(80px, 80px);
+      margin-right: 20px;
+
+      border-radius: 50%;
+    }
+
+    &__quote {
+      padding: 0;
+
+      border: none;
+    }
+  }
+}
+
+// MOBILE
+@media (max-width: @mobile-width) {
+  .reviews {
+    padding: 30px 0 0;
+
+    &__wrapper {
+      justify-content: center;
+      padding: 0 20px;
+    }
+
+    &__title {
+      margin-bottom: 35px;
+    }
+
+    button {
+      display: none;
+    }
+
+    &__toggles {
+      position: initial;
+      left: 0;
+      transform: none;
+
+      margin-bottom: 18px;
+    }
+  }
+
+  .slider {
+    &__list {
+      border-top: none;
+      border-bottom: none;
+    }
+
+    &__item {
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    &__author-photo {
+      .size(50px, 50px);
+      margin-right: 20px;
+
+      border-radius: inherit;
+    }
+  }
+}

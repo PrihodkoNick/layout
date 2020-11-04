@@ -1,0 +1,166 @@
+.footer {
+  margin-top: auto;
+  padding: 56px 0;
+
+  color: #ffffff;
+
+  background-color: #292929;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__contacts {
+    width: 35%;
+  }
+
+  &__header {
+    margin-bottom: 20px;
+
+    font-family: @font-bold;
+    text-transform: uppercase;
+  }
+
+  &__address {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &__develop {
+    position: relative;
+
+    width: 35%;
+
+    text-align: end;
+
+    b {
+      display: block;
+      margin-bottom: 20px;
+      padding-right: 35px;
+    }
+
+    a {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+.social {
+  width: 30%;
+
+  text-align: center;
+
+  &__slogan {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    margin-right: 6px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// TABLET
+@media (max-width: @tablet-width) {
+  .footer {
+    padding-bottom: 80px;
+
+    .wrapper {
+      flex-wrap: wrap;
+    }
+
+    &__contacts {
+      width: 60%;
+      margin-bottom: 50px;
+    }
+  }
+
+  .social {
+    order: 3;
+
+    width: 100%;
+
+    &__slogan {
+      display: none;
+    }
+
+    &__item {
+      width: 33.33333%;
+      margin-right: 0;
+
+      a {
+        .size(100%, 101px);
+      }
+    }
+  }
+}
+
+// MOBILE
+@media (max-width: @mobile-width) {
+  .footer {
+    padding: 35px 0;
+
+    border: 1px solid @bg-darkgrey;
+
+    .wrapper {
+      display: inherit;
+
+      text-align: center;
+    }
+
+    &__contacts {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &__address {
+      margin-bottom: 20px;
+    }
+
+    &__phone > span {
+      display: none;
+    }
+
+    &__social {
+      order: 2;
+
+      margin-bottom: 20px;
+    }
+
+    &__develop {
+      order: 3;
+
+      width: 100%;
+
+      text-align: center;
+
+      b {
+        padding-right: 0;
+      }
+
+      a {
+        position: relative;
+
+        margin: 0 auto;
+      }
+    }
+  }
+}

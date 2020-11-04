@@ -1,0 +1,43 @@
+.checkbox {
+  position: relative;
+
+  padding-left: 50px;
+
+  line-height: 33px;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .size(33px, 33px);
+
+    border: 1px solid #e5ddd5;
+    background-color: #ffffff;
+  }
+
+  &:hover span,
+  &:focus span {
+    border: 1px solid #d5c9bd;
+  }
+
+  &:active span {
+    background-color: #d5c9bd;
+  }
+
+  input {
+    display: none;
+
+    &:checked + span::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      .size(33px, 33px);
+
+      background: url("../img/tick.svg") no-repeat center center;
+    }
+  }
+}

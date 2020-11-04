@@ -1,0 +1,165 @@
+.news {
+  position: relative;
+
+  padding: 55px 0 40px;
+
+  background-color: @bg-lightgrey;
+  border-bottom: 1px solid #e5ddd5;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    padding-left: 70px;
+  }
+
+  &__list {
+    display: flex;
+    width: 100%;
+  }
+
+  &__item {
+    width: 33.33333%;
+    margin-right: 35px;
+  }
+
+  &__link {
+    display: flex;
+
+    &:hover .news__description,
+    &:focus .news__description {
+      color: @brown-color;
+      text-decoration: underline;
+    }
+
+    &:active .news__description {
+      color: #6a4d38;
+    }
+
+    &:hover .news__date,
+    &:focus .news__date {
+      background-color: @brown-color;
+    }
+
+    &:active .news__date {
+      background-color: #6a4d38;
+    }
+
+    &:hover .news__date::after,
+    &:focus .news__date::after {
+      border-top-color: @brown-color;
+    }
+
+    &:active .news__date::after {
+      border-top-color: #6a4d38;
+    }
+
+    &:active span {
+      opacity: 0.3;
+    }
+  }
+
+  &__date {
+    position: relative;
+    top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50px;
+    margin-right: 20px;
+
+    color: #ffffff;
+
+    background-color: #000000;
+
+    &--day {
+      width: 50px;
+
+      font-family: @font-bold;
+      .font(30px, 30px);
+      text-align: center;
+    }
+    &--month {
+      .font(16px, 16px);
+      text-transform: lowercase;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50px;
+
+      border: 25px solid transparent;
+      border-top: 10px solid #000000;
+    }
+  }
+
+  &__description {
+    .font(18px, 27px);
+    text-transform: none;
+    color: #000000;
+  }
+}
+
+// TABLET
+@media (max-width: @tablet-width) {
+  .news {
+    padding: 40px 0;
+    &__title {
+      padding-left: 0;
+    }
+
+    &__item {
+      width: 50%;
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+// MOBILE
+@media (max-width: @mobile-width) {
+  .news {
+    padding: 35px 20px 28px;
+
+    &__wrapper {
+      justify-content: center;
+    }
+
+    &__title {
+      margin-bottom: 35px;
+    }
+
+    button {
+      order: 3;
+
+      width: 100%;
+    }
+
+    &__list {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__item {
+      width: 100%;
+      margin-bottom: 30px;
+      margin-right: 0;
+      padding-bottom: 30px;
+
+      border-bottom: 1px solid #e5ddd5;
+    }
+    &__item:nth-child(2) {
+      margin-bottom: 0;
+
+      border-bottom: none;
+    }
+  }
+}

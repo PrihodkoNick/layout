@@ -1,0 +1,241 @@
+.jobs {
+  position: relative;
+
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 0 85px;
+
+  &__remark {
+    position: absolute;
+    top: 25px;
+    right: 0;
+
+    .size(166px, 50px);
+
+    font-family: @font-bold;
+    .font(20px, 50px);
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+
+    background-color: @brown-color;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      bottom: 0;
+
+      .size(0, 0);
+
+      border-left: 10px solid transparent;
+      border-top: 25px solid #826550;
+      border-bottom: 25px solid #826550;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 80px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 39px;
+
+    &--main {
+      position: relative;
+
+      flex-direction: row;
+      margin: 0 0 40px 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 33px;
+    height: 100%;
+
+    border: 1px solid #e6ded6;
+
+    &--main {
+      padding: 130px 40px 30px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 30px;
+
+    font-family: @font-bold;
+    .font(24px, 27px);
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__service {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
+  &__service-item {
+    position: relative;
+
+    margin-right: 35px;
+    padding-left: 35px;
+
+    .font(16px, 27px);
+    text-transform: uppercase;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      .size(21px, 20px);
+    }
+
+    &--scissors::before {
+      content: url("../img/scissors-icon.svg");
+    }
+
+    &--shaving::before {
+      content: url("../img/beard-icon.svg");
+    }
+
+    &--mustache {
+      padding-left: 45px;
+
+      &::before {
+        content: url("../img/mustache-icon.svg");
+        top: 0;
+
+        .size(45px, 0);
+      }
+    }
+  }
+}
+
+// TABLET
+@media (max-width: @tablet-width) {
+  .jobs {
+    max-width: 640px;
+    margin-bottom: 0;
+    padding-top: 50px;
+
+    &__remark {
+      left: -3px;
+
+      &::before {
+        content: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: -10px;
+        bottom: 0;
+
+        .size(0, 0);
+
+        border-right: 10px solid transparent;
+        border-top: 25px solid #826550;
+        border-bottom: 25px solid #826550;
+      }
+    }
+
+    &__header {
+      margin-bottom: 35px;
+    }
+
+    &__list {
+      padding-bottom: 60px;
+    }
+
+    &__item {
+      flex-direction: row;
+      margin-bottom: 40px;
+    }
+
+    &__service-item {
+      flex-direction: row;
+      margin-right: 25px;
+      padding-left: 30px;
+
+      &--mustache {
+        padding-left: 45px;
+      }
+    }
+
+    &__info {
+      width: 372px;
+      padding: 45px 40px 40px 50px;
+    }
+  }
+}
+
+// MODILE
+@media (max-width: @mobile-width) {
+  .jobs {
+    padding-top: 30px;
+
+    &__remark {
+      top: 400px;
+      left: 0;
+    }
+
+    &__header {
+      justify-content: center;
+    }
+
+    .btn--link {
+      display: none;
+    }
+
+    &__list {
+      flex-direction: column;
+      padding-bottom: 15px;
+    }
+
+    &__item {
+      flex-direction: column;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    &__picture {
+      .size(100%, 176px);
+
+      &--main {
+        height: 480px;
+      }
+    }
+
+    &__info {
+      width: 100%;
+      padding: 23px 33px 23px 21px;
+    }
+  }
+}

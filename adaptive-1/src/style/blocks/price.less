@@ -1,0 +1,168 @@
+.price {
+  padding: 75px 0 80px;
+
+  color: #ffffff;
+
+  background-color: #353535;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    padding: 15px 20px;
+
+    .font(20px, 27px);
+
+    border: 1px solid #4a4a4a;
+
+    &--num {
+      padding: 15px 30px;
+
+      opacity: 0.3;
+    }
+
+    &--name {
+      padding-right: 40px;
+
+      font-family: @font-bold;
+    }
+
+    &--note {
+      padding-right: 50px;
+    }
+
+    span {
+      display: none;
+    }
+  }
+
+  &__time {
+    padding: 34px 60px 25px;
+
+    text-align: center;
+
+    border: 1px solid #4a4a4a;
+  }
+
+  &__clock {
+    .size(142px, 139px);
+    margin-bottom: 28px;
+
+    background: url("../img/clock.svg") no-repeat center center;
+  }
+
+  &__discount {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// TABLET
+@media (max-width: @tablet-width) {
+  .price {
+    padding-top: 40px;
+
+    &__box {
+      flex-direction: column;
+    }
+
+    &__table {
+      margin-bottom: 9px;
+    }
+
+    &__time {
+      display: flex;
+      align-items: center;
+
+      padding: 20px 25px;
+    }
+
+    &__clock {
+      .size(71px, 70px);
+      margin-right: 80px;
+      margin-bottom: 0;
+    }
+
+    &__discount {
+      flex-direction: row;
+
+      font-family: @font-bold;
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: @mobile-width) {
+  .price {
+    padding-top: 30px;
+    padding-bottom: 20px;
+
+    &__box {
+      padding: 0 20px;
+    }
+
+    &__title {
+      margin-bottom: 30px;
+
+      text-align: center;
+    }
+
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    &__col {
+      border: none;
+      padding: 0;
+
+      &--num {
+        display: none;
+      }
+
+      span {
+        display: inline;
+      }
+
+      &--name {
+        padding-bottom: 0;
+        width: 70%;
+      }
+
+      &--note {
+        order: 3;
+
+        width: 100%;
+        padding-top: 0;
+      }
+
+      &--cost {
+        width: 30%;
+
+        padding-right: 0;
+        padding-bottom: 0;
+
+        text-align: right;
+      }
+    }
+
+    &__clock {
+      margin-right: 35px;
+    }
+
+    &__discount {
+      flex-direction: column;
+
+      font-family: @font-normal;
+      .font(20px, 27px);
+    }
+  }
+}
